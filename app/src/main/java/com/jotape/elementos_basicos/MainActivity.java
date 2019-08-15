@@ -67,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
                                 "Nombre :"+nombre+"\nEdad :"+edad+"\nEmail :"+email,
                                 FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
                     }
-
-
-
                 }catch (Exception e){
                     Toast.makeText(MainActivity.this,
                             "Ingrese la edad!",Toast.LENGTH_LONG).show();
