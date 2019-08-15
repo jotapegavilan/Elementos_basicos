@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shashank.sony.fancytoastlib.FancyToast;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Realizar el enlace a la UI
-        txtTitulo = (TextView)findViewById(R.id.txtTitulo);
-        txtNombre = (EditText)findViewById(R.id.txtNombre);
-        txtEdad = (EditText)findViewById(R.id.txtEdad);
-        txtEmail = (EditText)findViewById(R.id.txtEmail);
-        btnGuardar = (Button)findViewById(R.id.btnGuardar);
+        txtTitulo = findViewById(R.id.txtTitulo);
+        txtNombre = findViewById(R.id.txtNombre);
+        txtEdad = findViewById(R.id.txtEdad);
+        txtEmail = findViewById(R.id.txtEmail);
+        btnGuardar = findViewById(R.id.btnGuardar);
 
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
@@ -61,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
                         txtEdad.requestFocus();
                     }else{
                         //Toast = enviar mensajes emergentes en android
-                        Toast.makeText(MainActivity.this,
+                        FancyToast.makeText(MainActivity.this,
                                 "Nombre :"+nombre+"\nEdad :"+edad+"\nEmail :"+email,
-                                Toast.LENGTH_LONG).show();
+                                FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();
                     }
 
 
