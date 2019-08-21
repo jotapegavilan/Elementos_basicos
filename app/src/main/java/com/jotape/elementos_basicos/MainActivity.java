@@ -2,6 +2,7 @@ package com.jotape.elementos_basicos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     // Declarar los objetos visuales
     private TextView txtTitulo;
     private EditText txtNombre, txtEdad, txtEmail;
-    private Button btnGuardar;
+    private Button btnGuardar, btnMover;
     private String nombre, email;
     private int edad;
 
@@ -31,7 +32,22 @@ public class MainActivity extends AppCompatActivity {
         txtEdad = findViewById(R.id.txtEdad);
         txtEmail = findViewById(R.id.txtEmail);
         btnGuardar = findViewById(R.id.btnGuardar);
+        btnMover = findViewById(R.id.btnMover);
 
+        // Escuchador de click para el boton 2
+
+        btnMover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Nos mueva desde la main activity a otra
+                // Intent
+                Intent intento =
+                        new Intent(MainActivity.this,
+                        Componentes_complejos.class);
+
+                startActivity(intento);
+            }
+        });
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
